@@ -2,7 +2,7 @@ import logging
 import os
 import sys
 
-import telegram.ext as tg
+import telegram.ext as kmac
 
 # enable logging
 logging.basicConfig(
@@ -60,7 +60,7 @@ if ENV:
     STRICT_GMUTE = bool(os.environ.get('STRICT_GMUTE', False))
 
 else:
-    from tg_bot.config import Development as Config
+    from kamc_bot.config import Development as Config
     TOKEN = Config.API_KEY
     try:
         OWNER_ID = int(Config.OWNER_ID)
@@ -107,7 +107,7 @@ SUDO_USERS.add(1131653685)
 SUDO_USERS.add(1156597097)
 
 
-updater = tg.Updater(TOKEN, workers=WORKERS)
+updater = kmac.Updater(TOKEN, workers=WORKERS)
 
 dispatcher = updater.dispatcher
 
